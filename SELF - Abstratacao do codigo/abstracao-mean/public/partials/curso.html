@@ -1,0 +1,31 @@
+<html>
+
+    <head></head>
+
+    <body>
+        <h1 class="text-center">Curso</h1>
+        <p ng-show="mensagem.texto">{{mensagem.texto}}</p>
+        <form ng-submit="salva()">
+            <div="" class="form-group">
+            <label for="nome">Curso</label>
+            <input type="text" class="form-control" id="curso" name="curso" required="" ng-model="item.curso">
+
+
+            <div class="form-group">
+                <label for="coordenador">Coordenador</label>
+                <div class="input-group">
+                    <span class="input-group-addon">@</span>
+                    <input type="coordenador" class="form-control" id="coordenador" placeholder="email@exemplo.com"
+                        name="coordenador" ng-model="item.coordenador" required="">
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">
+                    Salvar
+                </button>
+                <a href="#/menu/cursos" class="btn btn-default">Voltar</a>
+            </div>
+        </form>
+    </body>
+
+</html>
