@@ -1,0 +1,20 @@
+{
+  "name": "Aula3",
+  "authors": [
+    "nthdevops <nthmanager@gmail.com>"
+  ],
+  "description": "Inicio com bower",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.8.0"
+  }
+}
