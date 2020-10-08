@@ -34,6 +34,11 @@ module.exports = function (app) {
 		);
 	};
 
+	controller.itemVazio = function (req, res) {
+		console.log('Novo item');
+		res.json({});
+	};
+
 	controller.removerItem = function (req, res) {
 		var itemDAO = model(req);
 		var idItem = req.params.id;
@@ -66,8 +71,13 @@ module.exports = function (app) {
 					res.status(201).json(item);
 				},
 				function(erro){
-					console.log(erro);
-					res.status(500).json(erro);
+					if(erro.code == 11000){
+						console.log("Duplicada de informações");
+						res.status(409).json(erro);
+					}else{
+						console.log(erro);
+						res.status(500).json(erro);
+					}
 				}
 			);
 		}

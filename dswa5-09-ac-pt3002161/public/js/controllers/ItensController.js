@@ -52,7 +52,10 @@ angular.module('ifsp').controller('ItensController',
                     $scope.item = getNewFactory();
                 })
                 .catch(function (erro) {
-                    $scope.mensagem = { texto: 'Não foi possível salvar' };
+                    if(erro.data.code == 11000)
+                        $scope.mensagem = { texto: 'Informações duplicadas! Item não foi salvo!' };
+                    else
+                        $scope.mensagem = { texto: 'Não foi possível salvar' };
                 });
         };
 	});
